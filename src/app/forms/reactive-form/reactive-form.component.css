@@ -1,0 +1,8 @@
+.fieldset-group {
+  border: 2px solid grey;
+  padding: 20px;
+}
+
+.first-name {
+  margin-right: 15px;
+}

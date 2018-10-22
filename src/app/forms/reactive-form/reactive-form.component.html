@@ -1,0 +1,9 @@
+<label>
+<input [formControl]= "nameControl">
+</label>
+
+<fieldset class="fieldset-group" [formGroup]="fullNameControl">
+  <input class="first-name" formControlName="firstName">
+  <input formControlName="lastName">
+</fieldset>
+

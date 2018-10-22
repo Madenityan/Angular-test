@@ -1,0 +1,21 @@
+{{user | json}}
+
+<form (ngSubmit)="submitted()" class="form-user" #userForm="ngForm">
+  <div class="form-group">
+    <label for="first-name">Имя:</label>
+    <input #spy #firstName="ngModel" required [(ngModel)]="user. firstName" name="firstName" class="form-control" type="text" id="first-name">
+    <div class="field-warning" [hidden]="firstName.valid ||firstName.pristine">
+      Поле 'Имя' обязательно для заполнения
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="last-name">Фамилия:</label>
+      <input  [(ngModel)]="user.lastName" name="lastName" class="form-control" type="text" id="last-name">
+  </div>
+  {{spy.className}}
+  <div class="wrapper-btn">
+    <button type="submit" class="btn btn-success" [disabled]="!userForm.form.valid">Сохранить</button>
+    <button type="button" class="btn btn-danger" (click)="cleanButtonClicked();userForm.reset()">Очистить</button>
+  </div>
+  {{formSubmitted}}
+</form>

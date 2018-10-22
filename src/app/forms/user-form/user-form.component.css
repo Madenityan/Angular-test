@@ -1,0 +1,27 @@
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948;
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442;
+}
+
+.field-warning {
+  background-color: #ffae9f;
+  text-align: center;
+  padding: 15px;
+}
+
+.btn-success {
+  margin-right: 20px;
+}
+
+.form-user {
+  margin: 0 auto;
+  width: 450px;
+}
+
+.wrapper-btn {
+  margin-top: 20px;
+}
