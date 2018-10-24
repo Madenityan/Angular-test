@@ -1,0 +1,40 @@
+
+.wrapper-form {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.form-item {
+  margin: 20px 30px;
+}
+
+.form-item input {
+  margin-right: 19px;
+  vertical-align: middle;
+  border: none;
+  border-bottom: 1px solid #007bff;
+  outline: none;
+}
+
+.task-list {
+  list-style-type: none;
+  margin: 0;
+  display: inline-block;
+  width: 50%;
+  padding-left: 10px;
+}
+
+.task-list > .task-item {
+  margin-top: 10px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.wrapper-item .btn {
+  padding: 5px;
+  display: inline-block;
+  vertical-align: unset;
+  background-color: transparent;
+  color: #ff1700;
+  font-weight: bold;
+}

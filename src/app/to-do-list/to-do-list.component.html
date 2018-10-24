@@ -1,0 +1,12 @@
+<div class="wrapper-form">
+  <form [formGroup]="form" (submit)="submit()" class="form-item">
+    <label><input formControlName="task" name = "text" type="text" placeholder="Введите текст"></label>
+    <button class="btn btn-primary">Добавить</button>
+  </form>
+  <div *ngFor="let task of tasks; let i = index" class="wrapper-item">
+    <button class="btn" (click)="deleteTask(i)">X</button>
+    <ul class="task-list">
+      <li class="task-item"><span>{{task }}</span></li>
+    </ul>
+</div>
+</div>

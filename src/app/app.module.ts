@@ -7,13 +7,15 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { UserFormComponent } from './forms/user-form/user-form.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
+import { ToDoListComponent } from './to-do-list/to-do-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
     UserFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    ToDoListComponent
   ],
   imports: [
     BrowserModule,
