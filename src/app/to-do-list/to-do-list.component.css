@@ -1,7 +1,7 @@
 
 .wrapper-form {
   margin: 0 auto;
-  width: 70%;
+  width: 450px;
 }
 
 .form-item {
@@ -28,13 +28,29 @@
   margin-top: 10px;
   background-color: #f2f2f2;
   padding: 10px;
+  margin-right: 15px;
 }
 
-.wrapper-item .btn {
-  padding: 5px;
+.wrapper-item .btn:first-child {
+  padding: 10px;
   display: inline-block;
   vertical-align: unset;
   background-color: transparent;
   color: #ff1700;
   font-weight: bold;
+}
+
+.wrapper-item .btn a:last-child {
+  vertical-align: unset;
+  padding: 5px 15px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.wrapper-item mat-card {
+  margin-top: 15px;
+}
+
+.wrapper-item button:focus {
+  outline: none;
 }

@@ -1,1 +1,22 @@
+h1 {
+  font-size: 30px;
+  color: gray;
+}
+
+.main-nav a {
+  color: #27808b;
+  margin-right: 20px;
+  text-transform: uppercase;
+}
+
+.main-nav {
+  margin-top: 11px;
+}
+
+.wrapper-header {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
 

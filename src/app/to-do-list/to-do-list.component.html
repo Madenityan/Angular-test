@@ -1,12 +1,28 @@
+
 <div class="wrapper-form">
-  <form [formGroup]="form" (submit)="submit()" class="form-item">
-    <label><input formControlName="task" name = "text" type="text" placeholder="Введите текст"></label>
-    <button class="btn btn-primary">Добавить</button>
-  </form>
-  <div *ngFor="let task of tasks; let i = index" class="wrapper-item">
-    <button class="btn" (click)="deleteTask(i)">X</button>
-    <ul class="task-list">
-      <li class="task-item"><span>{{task }}</span></li>
-    </ul>
+  <mat-card>
+    <form [formGroup]="form" (submit)="submit()" class="form-item" novalidate>
+        <label><input formControlName="task" name = "text" type="text" placeholder="Введите текст"></label>
+      <button mat-raised-button color="primary"> Add</button>
+    </form>
+  </mat-card>
+    <div *ngFor="let task of tasks; let i = index" class="wrapper-item">
+      <mat-card>
+        <button mat-icon-button (click)="deleteTask(i)">
+          <mat-icon>clear</mat-icon>
+        </button>
+        <ul class="task-list">
+          <li class="task-item">
+            <span>{{task}}</span>
+          </li>
+        </ul>
+        <button class="btn btn-success">
+          <a routerLink="/secondToDo">
+            Edit
+          </a>
+        </button>
+      </mat-card>
+    </div>
 </div>
-</div>
+
+
