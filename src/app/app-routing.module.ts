@@ -6,14 +6,19 @@ import {SecondListComponent} from './to-do-list/second-list/second-list.componen
 import {HeroesComponent} from './heroes/heroes.component';
 import {UserFormComponent} from './forms/user-form/user-form.component';
 import {ReactiveFormComponent} from './forms/reactive-form/reactive-form.component';
+import {ForTestComponent} from './for-test/for-test.component';
+
 
 const routes: Routes = [
+  { path: '', redirectTo: '/userForm', pathMatch: 'full' },
   { path: 'toDoList', component: ToDoListComponent},
   { path: 'secondToDo', component: SecondListComponent},
   { path: 'heroes', component: HeroesComponent},
   { path: 'userForm', component: UserFormComponent},
   { path: 'reactiveForm', component:  ReactiveFormComponent },
+  { path: 'forTest', component:  ForTestComponent }
 ];
+
 
 
 @NgModule({

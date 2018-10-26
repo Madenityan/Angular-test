@@ -11,8 +11,9 @@ import { UserFormComponent } from './forms/user-form/user-form.component';
 import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { SecondListComponent } from './to-do-list/second-list/second-list.component';
-import {MatButtonModule, MatCardModule, MatInputModule, MatFormFieldModule} from '@angular/material';
-import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule, MatCardModule, MatInputModule, MatFormFieldModule} from '@angular/material';
+import { MatIconModule} from '@angular/material/icon';
+import { ForTestComponent } from './for-test/for-test.component';
 
 
 
@@ -23,7 +24,8 @@ import {MatIconModule} from '@angular/material/icon';
     UserFormComponent,
     ReactiveFormComponent,
     ToDoListComponent,
-    SecondListComponent
+    SecondListComponent,
+    ForTestComponent
   ],
   imports: [
     BrowserModule,

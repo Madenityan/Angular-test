@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-to-do-list',
@@ -14,18 +15,24 @@ export class ToDoListComponent implements OnInit {
     task: new FormControl()
   });
 
+  constructor(private router: Router) {
+
+  }
+
   submit() {
     this.tasks.push(this.form.value.task);
     this.form.reset();
   }
 
-  deleteTask (index: number) {
+  deleteTask(index: number) {
     this.tasks.splice(index, 1);
   }
 
-  constructor() { }
 
   ngOnInit() {
   }
 
+  goTo(cameFromComponent) {
+    this.router.navigate(['/secondToDo', {toDo: cameFromComponent}]);
+  }
 }

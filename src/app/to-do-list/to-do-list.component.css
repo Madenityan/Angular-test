@@ -20,15 +20,16 @@
   list-style-type: none;
   margin: 0;
   display: inline-block;
-  width: 50%;
+  width: 60%;
   padding-left: 10px;
 }
 
 .task-list > .task-item {
-  margin-top: 10px;
   background-color: #f2f2f2;
   padding: 10px;
   margin-right: 15px;
+  overflow: hidden;
+  word-break: break-all;
 }
 
 .wrapper-item .btn:first-child {
@@ -49,6 +50,8 @@
 
 .wrapper-item mat-card {
   margin-top: 15px;
+  display: flex;
+  align-items: center;
 }
 
 .wrapper-item button:focus {
