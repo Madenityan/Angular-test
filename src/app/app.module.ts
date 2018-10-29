@@ -15,7 +15,7 @@ import { MatButtonModule, MatCardModule, MatInputModule, MatFormFieldModule, Mat
 import { MatIconModule} from '@angular/material/icon';
 import { ForTestComponent } from './for-test/for-test.component';
 import { MatDialogComponent } from './for-test/mat-dialog/mat-dialog.component';
-
+import { ListItemComponent } from './to-do-list/list-item/list-item.component';
 
 
 @NgModule({
@@ -27,7 +27,8 @@ import { MatDialogComponent } from './for-test/mat-dialog/mat-dialog.component';
     ToDoListComponent,
     SecondListComponent,
     ForTestComponent,
-    MatDialogComponent
+    MatDialogComponent,
+    ListItemComponent
   ],
   imports: [
     BrowserModule,

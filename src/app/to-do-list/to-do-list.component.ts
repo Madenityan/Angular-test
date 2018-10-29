@@ -27,19 +27,21 @@ export class ToDoListComponent implements OnInit {
   }
 
   deleteTask(index: number) {
-    // this.tasks.splice(index, 1);
     let dialog: MatDialogRef<SecondListComponent>;
     dialog = this.dialog.open(SecondListComponent, {
+      height: '200px',
+      width: '250px',
       data: {name: 'Delete'}
     });
 
     dialog.afterClosed().subscribe(result => {
       console.log(result);
 
+      if (result) {
+        this.tasks.splice(index, 1);
+      }
     });
-
   }
-
 
   ngOnInit() {
   }

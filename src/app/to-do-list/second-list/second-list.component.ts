@@ -18,7 +18,6 @@ export class SecondListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subscription = this.route.params.subscribe((params) => {
-
       this.toDo = params['toDo'];
     });
   }
