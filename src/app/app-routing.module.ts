@@ -8,6 +8,7 @@ import {UserFormComponent} from './forms/user-form/user-form.component';
 import {ReactiveFormComponent} from './forms/reactive-form/reactive-form.component';
 import {ForTestComponent} from './for-test/for-test.component';
 import {MatDialogComponent} from './for-test/mat-dialog/mat-dialog.component';
+import {ListItemComponent} from './to-do-list/list-item/list-item.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'reactiveForm', component:  ReactiveFormComponent },
   { path: 'forTest', component:  ForTestComponent },
   { path: 'matDialog', component:  MatDialogComponent },
+  { path: 'listItem', component:  ListItemComponent }
 ];
 
 

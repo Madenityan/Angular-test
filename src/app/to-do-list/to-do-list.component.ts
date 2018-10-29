@@ -47,6 +47,6 @@ export class ToDoListComponent implements OnInit {
   }
 
   goTo(cameFromComponent) {
-    this.router.navigate(['/secondToDo', {toDo: cameFromComponent}]);
+    this.router.navigate(['/listItem', {toDo: cameFromComponent}]);
   }
 }

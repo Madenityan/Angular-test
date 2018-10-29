@@ -2,15 +2,3 @@
   margin: 0 auto;
   width: 450px;
 }
-
-.wrapper-second-to-do li{
-  list-style-type: none;
-  overflow: hidden;
-  word-break: break-all;
-}
-
-.wrapper-second-to-do  mat-card> {
-  background-color: orange;
-  overflow: hidden;
-  word-break: break-all;
-}
