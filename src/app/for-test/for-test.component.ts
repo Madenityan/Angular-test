@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import {MatDialogComponent} from './mat-dialog/mat-dialog.component';
 
 @Component({
   selector: 'app-for-test',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForTestComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(public dialog: MatDialog) {
   }
 
+  openDialog() {
+    this.dialog.open(MatDialogComponent, {
+      data: {name: 'Delete'}
+    });
+  }
+    ngOnInit() {}
 }

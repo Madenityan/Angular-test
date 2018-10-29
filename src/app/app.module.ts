@@ -11,9 +11,10 @@ import { UserFormComponent } from './forms/user-form/user-form.component';
 import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { SecondListComponent } from './to-do-list/second-list/second-list.component';
-import { MatButtonModule, MatCardModule, MatInputModule, MatFormFieldModule} from '@angular/material';
+import { MatButtonModule, MatCardModule, MatInputModule, MatFormFieldModule, MatDialogModule} from '@angular/material';
 import { MatIconModule} from '@angular/material/icon';
 import { ForTestComponent } from './for-test/for-test.component';
+import { MatDialogComponent } from './for-test/mat-dialog/mat-dialog.component';
 
 
 
@@ -25,7 +26,8 @@ import { ForTestComponent } from './for-test/for-test.component';
     ReactiveFormComponent,
     ToDoListComponent,
     SecondListComponent,
-    ForTestComponent
+    ForTestComponent,
+    MatDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -38,9 +40,11 @@ import { ForTestComponent } from './for-test/for-test.component';
     MatInputModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [SecondListComponent]
 })
 export class AppModule { }

@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {SecondListComponent} from './second-list/second-list.component';
 
 @Component({
   selector: 'app-to-do-list',
@@ -15,7 +17,7 @@ export class ToDoListComponent implements OnInit {
     task: new FormControl()
   });
 
-  constructor(private router: Router) {
+  constructor( private router: Router, public dialog: MatDialog) {
 
   }
 
@@ -25,7 +27,17 @@ export class ToDoListComponent implements OnInit {
   }
 
   deleteTask(index: number) {
-    this.tasks.splice(index, 1);
+    // this.tasks.splice(index, 1);
+    let dialog: MatDialogRef<SecondListComponent>;
+    dialog = this.dialog.open(SecondListComponent, {
+      data: {name: 'Delete'}
+    });
+
+    dialog.afterClosed().subscribe(result => {
+      console.log(result);
+
+    });
+
   }
 
 

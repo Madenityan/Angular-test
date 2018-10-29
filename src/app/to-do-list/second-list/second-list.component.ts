@@ -1,5 +1,6 @@
-import {Component, OnInit, Input, OnDestroy} from '@angular/core';
+import {Component, OnInit, Input, OnDestroy, Inject} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-second-list',
@@ -11,7 +12,8 @@ export class SecondListComponent implements OnInit, OnDestroy {
   toDo: any;
   subscription: any;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private matDialogRef: MatDialogRef<SecondListComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: any) {
   }
 
   ngOnInit() {
@@ -24,5 +26,10 @@ export class SecondListComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
+
+  public close (isDelete) {
+    this.matDialogRef.close(isDelete);
+  }
+
 
 }
