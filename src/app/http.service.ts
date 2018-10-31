@@ -7,8 +7,8 @@ import {HttpClient} from '@angular/common/http';
 export class HttpService {
   constructor(private http: HttpClient) {}
 
-  getData() {
-    return this.http.get('/assets/userLogin.json');
+  register(params) {
+    return this.http.post('http://localhost:8080/registration', params);
   }
 
 }

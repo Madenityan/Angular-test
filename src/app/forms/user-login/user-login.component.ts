@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import {FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
 import { UserLogin} from '../../models/userLogin';
 import { HttpService} from '../../http.service';
 
@@ -8,37 +8,39 @@ import { HttpService} from '../../http.service';
   templateUrl: './user-login.component.html',
   styleUrls: ['./user-login.component.css']
 })
+
 export class UserLoginComponent implements OnInit {
 
   allControl: FormGroup;
   public user: UserLogin;
   public formSubmitted: boolean;
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.formSubmitted = false;
 
-    // this.user = {
-    //   id: 1,
-    //   name: '',
-    //   email: '',
-    //   pass: ''
-    // };
+    this.user = {
+      id: 0,
+      name: '',
+      email: '',
+      password: ''
+    };
 
-  this.allControl = new FormGroup({
-    nameControl: new FormControl(),
-    emailControl: new FormControl(),
-    passControl: new FormControl()
+  this.allControl = this.formBuilder.group({
+    name: [''],
+    mail: ['', [Validators.required]],
+    password: ['', [Validators.required]]
   });
 
   // this.allControl.valueChanges.subscribe((value => console.log(value)));
-    this.httpService.getData().subscribe((data: UserLogin) => this.user = data);
-
   }
 
   // відправка даних на сервер
-  public submitted() {
+  public submit() {
+    console.log(this.allControl, this.allControl.value);
+    this.httpService.register(this.allControl.value).subscribe((data: UserLogin) => this.user = data);
+    this.allControl.reset();
     this.formSubmitted = true;
   }
 }
