@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
@@ -17,6 +18,7 @@ import { ForTestComponent } from './for-test/for-test.component';
 import { MatDialogComponent } from './for-test/mat-dialog/mat-dialog.component';
 import { ListItemComponent } from './to-do-list/list-item/list-item.component';
 import { UserLoginComponent } from './forms/user-login/user-login.component';
+import { HttpService} from './http.service';
 
 
 @NgModule({
@@ -44,9 +46,10 @@ import { UserLoginComponent } from './forms/user-login/user-login.component';
     MatButtonModule,
     MatFormFieldModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent],
   entryComponents: [SecondListComponent]
 })

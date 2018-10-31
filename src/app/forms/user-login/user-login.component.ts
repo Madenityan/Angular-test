@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import {UserLogin} from '../../models/userLogin';
+import { UserLogin} from '../../models/userLogin';
+import { HttpService} from '../../http.service';
 
 @Component({
   selector: 'app-user-login',
@@ -13,17 +14,17 @@ export class UserLoginComponent implements OnInit {
   public user: UserLogin;
   public formSubmitted: boolean;
 
-  constructor() { }
+  constructor(private httpService: HttpService) { }
 
   ngOnInit() {
     this.formSubmitted = false;
 
-    this.user = {
-      id: 1,
-      name: '',
-      email: '',
-      pass: ''
-    };
+    // this.user = {
+    //   id: 1,
+    //   name: '',
+    //   email: '',
+    //   pass: ''
+    // };
 
   this.allControl = new FormGroup({
     nameControl: new FormControl(),
@@ -31,7 +32,8 @@ export class UserLoginComponent implements OnInit {
     passControl: new FormControl()
   });
 
-  this.allControl.valueChanges.subscribe((value => console.log(value)));
+  // this.allControl.valueChanges.subscribe((value => console.log(value)));
+    this.httpService.getData().subscribe((data: UserLogin) => this.user = data);
 
   }
 
