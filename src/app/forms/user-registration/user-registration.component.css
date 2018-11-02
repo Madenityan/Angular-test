@@ -1,0 +1,9 @@
+.wrapper-registration {
+  width: 450px;
+  margin: 0 auto;
+}
+
+.form-registration {
+  display: flex;
+  flex-direction: column;
+}
