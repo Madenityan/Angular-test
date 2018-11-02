@@ -1,26 +1,17 @@
 <div class="wrapper-login">
-  <form (ngSubmit)="submit()" class="form-login" [formGroup]="allControl">
+  <form (ngSubmit)="submitLogin()" class="form-login" [formGroup]="allLoginControl">
     <mat-form-field>
       <label for="name">
         <input matInput formControlName="name" name="name" type="text" placeholder="Name" id="name">
       </label>
     </mat-form-field>
     <mat-form-field>
-      <label for="email">
-        <input matInput formControlName="mail" name="email" type="email" placeholder="Email" id="email">
-      </label>
-    </mat-form-field>
-    <mat-form-field>
-      <label for="pass">
-        <input matInput formControlName="password" name="pass" type="password" placeholder="Password" id="pass">
-      </label>
+    <label for="pass">
+      <input matInput formControlName="password" name="pass" type="password" placeholder="Password" id="pass">
+    </label>
     </mat-form-field>
     <div>
-      <button mat-raised-button color="primary" type="submit">Submit</button>
+      <button mat-raised-button color="accent" type="submit">Submit</button>
     </div>
   </form>
-  <!--{{user?.name}}-->
-  <!--{{user?.email}}-->
-  <!--{{user?.pass}}-->
 </div>
-

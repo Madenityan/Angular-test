@@ -17,9 +17,11 @@ import { MatIconModule} from '@angular/material/icon';
 import { ForTestComponent } from './for-test/for-test.component';
 import { MatDialogComponent } from './for-test/mat-dialog/mat-dialog.component';
 import { ListItemComponent } from './to-do-list/list-item/list-item.component';
+import { UserRegistrationComponent} from './forms/user-registration/user-registration.component';
 import { UserLoginComponent } from './forms/user-login/user-login.component';
 import { HttpService} from './http.service';
-
+import { AuthGuard} from './guards/auth.guard';
+import { ExitRegistrationGuard} from './guards/exit.registration.guard';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { HttpService} from './http.service';
     ForTestComponent,
     MatDialogComponent,
     ListItemComponent,
-    UserLoginComponent
+    UserRegistrationComponent,
+    UserLoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,7 @@ import { HttpService} from './http.service';
     MatDialogModule,
     HttpClientModule
   ],
-  providers: [HttpService],
+  providers: [HttpService, AuthGuard, ExitRegistrationGuard],
   bootstrap: [AppComponent],
   entryComponents: [SecondListComponent]
 })

@@ -1,5 +1,5 @@
 
-export class UserLogin {
+export class UserForm {
   id: number;
   name: string;
   email: string;

@@ -9,12 +9,15 @@ import {ReactiveFormComponent} from './forms/reactive-form/reactive-form.compone
 import {ForTestComponent} from './for-test/for-test.component';
 import {MatDialogComponent} from './for-test/mat-dialog/mat-dialog.component';
 import {ListItemComponent} from './to-do-list/list-item/list-item.component';
+import {UserRegistrationComponent} from './forms/user-registration/user-registration.component';
 import {UserLoginComponent} from './forms/user-login/user-login.component';
+import {AuthGuard} from './guards/auth.guard';
+import {ExitRegistrationGuard} from './guards/exit.registration.guard';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login-user', pathMatch: 'full' },
-  { path: 'toDoList', component: ToDoListComponent},
+  { path: '', redirectTo: 'user-login', pathMatch: 'full' },
+  { path: 'toDoList', component: ToDoListComponent, canActivate: [AuthGuard]},
   { path: 'secondToDo', component: SecondListComponent},
   { path: 'heroes', component: HeroesComponent},
   { path: 'userForm', component: UserFormComponent},
@@ -22,7 +25,8 @@ const routes: Routes = [
   { path: 'forTest', component:  ForTestComponent },
   { path: 'matDialog', component:  MatDialogComponent },
   { path: 'listItem', component:  ListItemComponent },
-  { path: 'login-user', component:  UserLoginComponent }
+  { path: 'user-registration', component:  UserRegistrationComponent, canDeactivate: [ExitRegistrationGuard]},
+  { path: 'user-login', component:  UserLoginComponent},
 ];
 
 
@@ -31,6 +35,7 @@ const routes: Routes = [
   imports: [ RouterModule.forRoot(routes)],
   exports: [ RouterModule ]
 })
+
 
 export class AppRoutingModule {}
 
