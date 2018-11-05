@@ -16,8 +16,8 @@ import {ExitRegistrationGuard} from './guards/exit.registration.guard';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'user-login', pathMatch: 'full' },
-  { path: 'toDoList', component: ToDoListComponent, canActivate: [AuthGuard]},
+  { path: '', redirectTo: 'heroes', pathMatch: 'full' },
+  { path: 'toDoList', component: ToDoListComponent},
   { path: 'secondToDo', component: SecondListComponent},
   { path: 'heroes', component: HeroesComponent},
   { path: 'userForm', component: UserFormComponent},
@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'matDialog', component:  MatDialogComponent },
   { path: 'listItem', component:  ListItemComponent },
   { path: 'user-registration', component:  UserRegistrationComponent, canDeactivate: [ExitRegistrationGuard]},
-  { path: 'user-login', component:  UserLoginComponent},
+  { path: 'user-login', component:  UserLoginComponent, canActivate: [AuthGuard]},
 ];
 
 
