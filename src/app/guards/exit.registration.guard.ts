@@ -8,6 +8,7 @@ import {Injectable} from '@angular/core';
 export interface OnInit {
   canDeactivate: () => boolean | Observable<boolean>;
 }
+
 @Injectable()
 export class ExitRegistrationGuard implements CanDeactivate<OnInit> {
 

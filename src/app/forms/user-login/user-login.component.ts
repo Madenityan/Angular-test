@@ -22,10 +22,18 @@ export class UserLoginComponent implements OnInit {
     });
   }
 
+  saveToken (data) {
+    localStorage.setItem('token', data.data.token);
+}
+
+
   submitLogin() {
-    console.log('login form submitted');
     console.log(this.allLoginControl, this.allLoginControl.value);
-    this.httpService.login(this.allLoginControl.value).subscribe((data: UserForm) => this.user = data);
+    this.httpService.login(this.allLoginControl.value).subscribe((data: UserForm) => {
+      this.user = data;
+      this.saveToken(data);
+    });
   }
+
 
 }

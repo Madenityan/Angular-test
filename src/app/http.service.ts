@@ -12,7 +12,6 @@ export class HttpService {
   }
 
   login(params) {
-    console.log('login method call');
     return this.http.post('http://localhost:8080/login', params);
   }
 }

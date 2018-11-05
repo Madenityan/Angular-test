@@ -31,7 +31,8 @@ export class UserRegistrationComponent implements OnInit {
   this.allControl = this.formBuilder.group({
     name: [''],
     mail: ['', [Validators.required]],
-    password: ['', [Validators.required]]
+    password: ['', [Validators.required]],
+    passwordConf: ['', [Validators.required]]
   });
 
   // this.allControl.valueChanges.subscribe((value => console.log(value)));
@@ -41,7 +42,6 @@ export class UserRegistrationComponent implements OnInit {
   public submit() {
     console.log(this.allControl, this.allControl.value);
     this.httpService.register(this.allControl.value).subscribe((data: UserForm) => this.user = data);
-
     this.allControl.reset();
   }
 
