@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
-
 @Injectable()
 
 export class HttpService {
@@ -13,5 +12,6 @@ export class HttpService {
 
   login(params) {
     return this.http.post('http://localhost:8080/login', params);
+
   }
 }
