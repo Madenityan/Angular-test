@@ -17,6 +17,8 @@ export class UserLoginComponent implements OnInit {
   constructor(private router: Router, private httpService: HttpService, private formBuilder: FormBuilder) {
   }
 
+  
+
   ngOnInit() {
     this.allLoginControl = this.formBuilder.group({
       name: ['', [Validators.required]],

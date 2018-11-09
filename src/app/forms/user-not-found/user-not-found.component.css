@@ -1,0 +1,25 @@
+.wrapper-user-not-found {
+  width: 450px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wrapper-user-not-found h2 {
+  font-size: 35px;
+  color: #a95658;
+}
+
+.wrapper-user-not-found p {
+  font-size: 25px;
+  color: #27808b;
+}
+
+.err401 {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 30px;
+}
+
+.btn-go-to {
+  cursor: pointer;
+}
