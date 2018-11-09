@@ -13,10 +13,11 @@ import {UserRegistrationComponent} from './forms/user-registration/user-registra
 import {UserLoginComponent} from './forms/user-login/user-login.component';
 import {AuthGuard} from './guards/auth.guard';
 import {ExitRegistrationGuard} from './guards/exit.registration.guard';
+import {UserNotFoundComponent} from './forms/user-not-found/user-not-found.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'user-login', pathMatch: 'full' },
+  { path: '', redirectTo: 'user-not-found', pathMatch: 'full' },
   { path: 'toDoList', component: ToDoListComponent, canActivate: [AuthGuard]},
   { path: 'secondToDo', component: SecondListComponent},
   { path: 'heroes', component: HeroesComponent, canActivate: [AuthGuard]},
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'listItem', component:  ListItemComponent },
   { path: 'user-registration', component:  UserRegistrationComponent, canDeactivate: [ExitRegistrationGuard]},
   { path: 'user-login', component:  UserLoginComponent},
+  { path: 'user-not-found', component:  UserNotFoundComponent},
 ];
 
 

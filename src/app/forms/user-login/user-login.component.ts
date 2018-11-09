@@ -36,9 +36,12 @@ export class UserLoginComponent implements OnInit {
         this.user = data;
         this.saveToken(data);
         this.allLoginControl.reset();
+        this.router.navigate(['/toDoList']);
       },
       (err) => {
-        this.router.navigate(['/user-registration']);
+        if (err.status === 401) {
+          this.router.navigate(['/user-not-found']);
+        }
       });
   }
 }

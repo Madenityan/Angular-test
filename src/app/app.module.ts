@@ -22,6 +22,7 @@ import { UserLoginComponent } from './forms/user-login/user-login.component';
 import { HttpService} from './http.service';
 import { AuthGuard} from './guards/auth.guard';
 import { ExitRegistrationGuard} from './guards/exit.registration.guard';
+import { UserNotFoundComponent } from './forms/user-not-found/user-not-found.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ExitRegistrationGuard} from './guards/exit.registration.guard';
     ListItemComponent,
     UserRegistrationComponent,
     UserLoginComponent,
+    UserNotFoundComponent
   ],
   imports: [
     BrowserModule,
